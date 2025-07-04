@@ -19,6 +19,8 @@ const AdminProductsPage = lazy(() => import("../pages/admin-products-page"));
 const AddProductPage = lazy(() => import("../pages/add-product-page"));
 const EditProductPage = lazy(() => import("../pages/edit-product-page"));
 
+const NotFoundPage = lazy(() => import("../pages/not-found-page"));
+
 const AppRoutes = () => {
   const ErrorBoundary = () => {
     return <h3>Oops! Ada yang salah.</h3>;
@@ -49,6 +51,8 @@ const AppRoutes = () => {
               <Route path=":id/edit" element={<EditProductPage />} />
             </Route>
           </Route>
+
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </Suspense>
